@@ -123,6 +123,10 @@ body {
     align-items: center;
     margin-left: auto;
     cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .menu-text {
     display: inline;
