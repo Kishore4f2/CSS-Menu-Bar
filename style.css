@@ -25,6 +25,15 @@ body {
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-label, .menu-text {
+  display: none;
 }
 
 .nav {
@@ -46,32 +55,6 @@ body {
 .icon:hover {
   background: #8bc6ec;
   color: #23235b;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-  background: #ffffff;
-  flex-direction: column;
-  cursor: pointer;
-  margin-left: auto;
-  padding: 0.4rem;
-  width: 36px;
-  height: 36px;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-icon span {
-  height: 4px;
-  width: 28px;
-  background: #ffffff;
-  margin: 4px 0;
-  border-radius: 4px;
-  display: block;
 }
 
 .gallery {
@@ -125,11 +108,9 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
   }
-
   .card img {
     height: 200px;
   }
-
   .container {
     padding: 0 1rem;
     height: 56px;
@@ -137,18 +118,36 @@ body {
 }
 
 @media (max-width: 767px) {
+  .menu-label {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .menu-text {
+    display: inline;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #fff;
+    padding: 0.4rem 1.2rem;
+    border-radius: 18px;
+    box-shadow: 0 1px 8px rgba(60,0,90,0.08);
+  }
   .nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 65px;
     right: 0;
+    left: 0;
     background: linear-gradient(170deg, #8bc6ec 80%, #23235b 100%);
-    width: 170px;
     box-shadow: 0 12px 34px rgba(60,0,90,0.11);
     border-radius: 0 0 14px 14px;
     z-index: 100;
     padding: 18px 0;
+    width: 100%;
+    text-align: left;
   }
   .nav a {
     margin: 10px 0;
@@ -157,24 +156,12 @@ body {
     text-align: left;
     padding-left: 24px;
   }
-  .menu-toggle:checked ~ .nav {
+
+  #menu-toggle:checked ~ .nav {
     display: flex;
-  }
-  .menu-icon {
-    display: none;
-  }
-  .menu-text {
-  display: inline;
   }
   .gallery {
     padding: 20px 2vw 0 2vw;
     gap: 1rem;
   }
 }
-.menu-text {
-  display: inline;
-  color: #000000;
-  font-size: 1.1rem;
-  margin-left: 10px;
-  font-weight: 600;
- }
