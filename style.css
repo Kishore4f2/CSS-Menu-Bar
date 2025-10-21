@@ -161,23 +161,17 @@ body {
     display: flex;
   }
   .menu-icon {
-    display: flex;
+    display: none;
   }
   .gallery {
     padding: 20px 2vw 0 2vw;
     gap: 1rem;
   }
-}
-.menu-text {
-  display: none;
+  .menu-text {
+  display: inline;
   color: #000000;
   font-size: 1.1rem;
   margin-left: 10px;
   font-weight: 600;
-}
-
-@media (max-width: 767px) {
-  .menu-text {
-    display: inline;
-  }
+ }
 }
