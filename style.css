@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: #fafbfc;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: linear-gradient(90deg, #23235b 0%, #8bc6ec 100%);
+  color: #fff;
+  position: relative;
+  height: 65px;
+  box-shadow: 0 2px 18px rgba(60,0,90,0.07);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.icon {
+  font-size: 1rem;
+  color: #000000;
+  text-decoration: none;
+  padding: 6px 18px;
+  border-radius: 18px;
+  transition: background 0.18s;
+  background: rgba(208, 116, 116, 0.08);
+}
+
+.icon:hover {
+  background: #8bc6ec;
+  color: #23235b;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.4rem;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon span {
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 4px;
+  display: block;
+}
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 40px 2vw 0 2vw;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(102,51,153,0.09);
+  background: #fff;
+  transition: transform 0.18s;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.96) contrast(1.02);
+  transition: filter 0.25s, transform 0.18s;
+}
+
+.card:hover img {
+  filter: brightness(1.07) contrast(1.12);
+  transform: scale(1.04);
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  fill-opacity: 0.85;
+  padding: 20px 0 14px 0;
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .container {
+    padding: 0 1rem;
+    height: 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: linear-gradient(170deg, #8bc6ec 80%, #23235b 100%);
+    width: 170px;
+    box-shadow: 0 12px 34px rgba(60,0,90,0.11);
+    border-radius: 0 0 14px 14px;
+    z-index: 100;
+    padding: 18px 0;
+  }
+  .nav a {
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    padding-left: 24px;
+  }
+  .menu-toggle:checked ~ .nav {
+    display: flex;
+  }
+  .menu-icon {
+    display: flex;
+  }
+  .gallery {
+    padding: 20px 2vw 0 2vw;
+    gap: 1rem;
+  }
+}
