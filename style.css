@@ -54,6 +54,7 @@ body {
 
 .menu-icon {
   display: none;
+  background: #000000;
   flex-direction: column;
   cursor: pointer;
   margin-left: auto;
@@ -67,7 +68,7 @@ body {
 .menu-icon span {
   height: 4px;
   width: 28px;
-  background: #fff;
+  background: #000000;
   margin: 4px 0;
   border-radius: 4px;
   display: block;
